@@ -1,0 +1,62 @@
+@use "../../styles/mixin.scss" as mixin;
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+
+  .mastercraftLogo {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.border {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+
+  &.selected {
+    border: 2px solid mixin.$color-green;
+  }
+}
+
+.cardContent {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: -4rem;
+  z-index: 1;
+  position: relative;
+  padding-top: 3rem;
+}
+
+.soldOut {
+  opacity: 0.5;
+  color: grey;
+}
+
+.modal {
+  // height: 90vh;
+  // overflow: hidden;
+  position: absolute;
+  top: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .cardContent {
+    // height: 100%;
+    // overflow: auto;
+  }
+}
+
+.thankYouModal {
+  max-width: 600px;
+}

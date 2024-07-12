@@ -1,0 +1,40 @@
+@use "../../styles/mixin.scss" as mixin;
+
+.border {
+  border: 1px solid mixin.$color-grey;
+}
+
+.pledge {
+  color: mixin.$color-green;
+}
+
+.header,
+.footer {
+  @include mixin.tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+
+  @include mixin.tablet {
+    padding-bottom: 0;
+  }
+}
+
+.left span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.outOfStock {
+  background-color: mixin.$color-grey;
+  pointer-events: none;
+}

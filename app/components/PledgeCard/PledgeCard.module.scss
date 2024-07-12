@@ -1,0 +1,134 @@
+@use "../../styles/mixin.scss" as mixin;
+
+.inputContainer {
+  border: 1px solid #e1e1e1;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  height: 56px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .input {
+    width: 100%;
+
+    &::placeholder {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e1e1e1;
+  padding: 2rem 0;
+  display: none;
+
+  @include mixin.tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.selected {
+    display: flex;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+.footerLeft {
+  text-align: center;
+}
+.footerRight {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.radio {
+  grid-row: 1/3;
+  display: flex;
+  // gap: 0.5rem;
+}
+
+.headerFlex {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+
+  @include mixin.tablet {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  // .radio,
+  // h3,
+  // span {
+  //   border: 1px solid #e1e1e1;
+  // }
+
+  .radio {
+    grid-row: 1/3;
+  }
+
+  .pledge {
+    grid-column: 2/3;
+  }
+}
+
+.left {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.customRadio {
+  /* Hide the default radio button */
+  // display: none;
+}
+
+/* Style the label as the custom radio button */
+.customRadio + label {
+  position: relative;
+  padding-left: 25px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+/* Style the custom radio indicator */
+.customRadio + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px; /* Adjust as needed to vertically align */
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999; /* Default border color */
+  border-radius: 50%;
+  background-color: white; /* Background color when not selected */
+}
+
+/* Change the color of the custom radio indicator when selected */
+.customRadio:checked + label::before {
+  // border-color: #007bff; /* New border color when selected */
+  background-color: mixin.$color-green; /* New background color when selected */
+}
