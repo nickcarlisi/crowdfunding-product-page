@@ -1,8 +1,18 @@
+"use client";
+
+import { useState } from "react";
+
 import React, { useContext } from "react";
 import styles from "./MainCard.module.scss";
 import Card from "../Card/Card";
 
 export default function MainCard({ toggleModal }) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  const toggleBookmark = () => {
+    setBookmarked(!bookmarked);
+  };
+
   return (
     <Card main>
       <h1>Mastercraft Bamboo Monitor Riser</h1>
@@ -13,11 +23,26 @@ export default function MainCard({ toggleModal }) {
         <button className={styles.togglemodal} onClick={toggleModal}>
           Back this project
         </button>
-        <div className={styles.bookMarkContainer}>
+        <div
+          className={`${styles.bookMarkContainer} ${
+            bookmarked ? styles.active : ""
+          }`}
+          onClick={toggleBookmark}
+        >
           <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
-              <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
-              <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+              {/* <circle fill="#2F2F2F" cx="28" cy="28" r="28" /> */}
+              <circle
+                fill={bookmarked ? "#147a73" : "#2F2F2F"}
+                cx="28"
+                cy="28"
+                r="28"
+              />
+              {/* <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" /> */}
+              <path
+                fill={bookmarked ? "#FFF" : "#B1B1B1"}
+                d="M23 19v18l5-5.058L33 37V19z"
+              />
             </g>
           </svg>
           <p className={styles.bookmark}>Bookmark</p>

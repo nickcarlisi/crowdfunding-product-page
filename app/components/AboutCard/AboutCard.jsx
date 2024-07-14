@@ -32,7 +32,7 @@ export default function AboutCard({
       </p>
       <div div className={styles.rewardCardContainer}>
         {content.map((item, index) => {
-          console.log(item.noShow);
+          // console.log(item.noShow);
           if (item.noShow === true) {
             return;
           }

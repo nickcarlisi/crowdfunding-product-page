@@ -7,16 +7,27 @@
   background-color: mixin.$color-off-white;
   border-radius: 30px;
   display: none;
+  cursor: pointer;
 
   p {
     padding-right: 2rem;
+  }
+
+  &.active {
+    color: mixin.$color-dark-green;
   }
 }
 
 .flexContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+
+  @include mixin.tablet {
+    flex-direction: row;
+  }
 }
 
 .para {

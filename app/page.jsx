@@ -73,7 +73,7 @@ export default function Home() {
 
   const handleBackProject = (newAmount) => {
     setAmountBacked(() => amountBacked + newAmount);
-    console.log(amountBacked);
+    // console.log(amountBacked);
   };
 
   const handleTotalBackers = () => {
